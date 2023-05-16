@@ -1,35 +1,32 @@
 <?php
-class Movie {
-    public $title;
-    public $genre;
-    public $duration;
-    public $country;
-    public $poster;
-    public $year;
 
+require_once __DIR__ . "/Models/movie.php";
 
-    function __construct($_title, $_genre, $_duration, $_country, $year) {
-        $this->title = $_title;
-        $this->genre = $_genre;
-        $this->duration = $_duration;
-        $this->country = $_country;
-        // $this->poster = $poster;
-        $this->year = $year;
-    }
+$movie1 = new Movie("Guardiani della Galassia Vol 3", ["Fantascienza", "Azione", "Commedia"], "2h 30m", "USA", "2023");
+$movie2 = new Movie("Ant-Man and The Wasp: Quantumania", ["Avventura", "Fantascienza", "Azione", "Commedia"], "2h 05m", "USA", "2023");
+$movie3 = new Movie("Doctor Strange nel Multiverso della Follia", ["Fantascienza", "Azione"], "2h 06m", "USA", "2022");
+$movie4 = new Movie("Thor: Love and Thunder", ["Azione","Fantascienza", "Avventura"], "2h 05m", "USA", "2022");
 
-    public function getDetails() {
-        return "Titolo: {$this->title} Genere: {$this->genre} Durata: {$this->duration} Paese: {$this->country} Anno: {$this->year}";
-    }
-}
-
-$movie1 = new Movie("Guardiani della Galassia Vol 3", "Fantascienza", "2h 30m", "USA", "2023");
-$movie2 = new Movie("Ant-Man and The Wasp: Quantumania", "Fantascienza", "2h 05m", "USA", "2023");
-$movie3 = new Movie("Doctor Strange nel Multiverso della Follia", "Fantascienza", "2h 06m", "USA", "2022");
-$movie4 = new Movie("Thor: Love and Thunder", "Fantascienza", "2h 05m", "USA", "2022");
-
-// echo $movie1->getDetails() . "\n";
-// echo $movie2->getDetails() . "\n";
-
-var_dump($movie1, $movie2, $movie3, $movie4)
+// var_dump($movie1, $movie2, $movie3, $movie4)
 
 ?>
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+</head>
+<body>
+
+    <?php 
+    echo $movie1->getDetails() . "<br>";
+    echo $movie2->getDetails() . "<br>";
+    echo $movie3->getDetails() . "<br>";
+    echo $movie4->getDetails() . "<br>";
+    ?>
+    
+</body>
+</html>
